@@ -292,6 +292,7 @@
 		padding: 0;
 		font-family: "Lucida Grande",Helvetica,Arial,Verdana,sans-serif;
 		font-size: 14px;
+		color: white;
 	}
 
 	#script-warning {
@@ -325,7 +326,7 @@
 
 	#header {
 	    background-color:white;
-	    color:black;
+	    color:white;
 	    text-align:center;
 	    padding:5px;
 	}
@@ -343,8 +344,8 @@
 	    padding:10px;	 	 
 	}
 	#footer {
-	    background-color:black;
-	    color:white;
+	    background-color:white;
+	    color:black;
 	    clear:both;
 	    text-align:center;
 	   padding:5px;	 	 
@@ -370,13 +371,12 @@
   </style>
   
 </head>
-<body>
-<hr> <hr>
+<body background="https://github.com/ItsAkilesh/Baymax/blob/master/src/main/resources/templates/untitled.png?raw=true">
 	<H1 align="center">BayMax</H1>
-	<hr> 
-<hr> 	<a th:href="@{/doctors}">homepage</a> <hr>
-	<div id="header">
-		<h1>Calendar</h1>
+	<div class="container py-10 px-10 mx-0 min-w-full flex flex-col items-center">
+		<button type="submit" value="logout" class="bg-purple-700 text-gray-300 hover:bg-fuchsia-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
+			<a th:href="@{/doctors}">Home</a>
+		</button>
 	</div>
 
 	<div id='script-warning'>
