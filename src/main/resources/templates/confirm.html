@@ -1,22 +1,27 @@
 <?xml version="1.0" encoding="ISO-8859-1" ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"    xmlns:th="http://www.thymeleaf.org">
-<body style="background-color:powderblue;">
-<hr> <hr>
-	<H1 align="center">BayMax</H1>
-	<hr> 
+<head>
+    <title>BayMax</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body background="https://github.com/ItsAkilesh/Baymax/blob/master/src/main/resources/templates/untitled.png?raw=true">
+<div  class="container py-10 px-10 mx-0 min-w-full flex flex-col items-center">
+    <h1 class="max-w-2xl mb-4 text-2xl font-extrabold tracking-tight content-center leading-none md:text-5xl xl:text-6xl dark:text-white">BayMax</h1>
+</div>
 <div align="center">
-        <h1>Create New Appointment</h1>
-        <br />
+    <div  class="container py-10 px-10 mx-0 min-w-full flex flex-col items-center">
+        <h1 class="max-w-2xl mb-4 text-xl font-bold tracking-tight content-center leading-none dark:text-white">Create New Appointment</h1>
+    </div>
         <form action="#" th:action="@{/confirm}" th:object="${confirmation}">
  
             <table border="0" cellpadding="10">
                 <tr>
-                    <td>Appointment id:</td>
+                    <td class="text-white">Appointment id:</td>
                     <td><input type="text" th:field="*{appointment_id}" /></td>
                 </tr>
                 <tr>
-                    <td colspan="2"><button type="submit">Save</button> </td>
+                    <td colspan="2"><button type="submit" class="bg-purple-600 text-gray-300 hover:bg-fuchsia-400 hover:text-white px-3 py-2 items-center rounded-md text-sm font-medium">Save</button> </td>
                 </tr>
             </table>
         </form>

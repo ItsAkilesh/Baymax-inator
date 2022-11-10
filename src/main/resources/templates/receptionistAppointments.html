@@ -2,49 +2,40 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
     xmlns:th="http://www.thymeleaf.org">
 <head>
-<meta charset="ISO-8859-1">
-<title>Your appointments</title>
-
-<style>
-table,th,td{
-border: 1px solid black;
-padding: 5px;
-text-align: center;
-}
-table{
-border-spacing: 10px;
-}
-</style>
+	<title>BayMax</title>
+	<script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body style="background-color:powderblue;">
-<hr> <hr>
-	<H1 align="center">BayMax</H1>
-	<hr>
-	<a th:href="@{/receptionist}">homepage</a>
-	 <hr>
+
+<body background="https://github.com/ItsAkilesh/Baymax/blob/master/src/main/resources/templates/untitled.png?raw=true">
+<div  class="container py-10 px-10 mx-0 min-w-full flex flex-col items-center">
+	<h1 class="max-w-2xl mb-4 text-2xl font-extrabold tracking-tight content-center leading-none md:text-5xl xl:text-6xl dark:text-white">BayMax</h1>
+</div>
+
+<button type="submit" class="bg-purple-600 text-gray-300 hover:bg-fuchsia-400 hover:text-white px-3 py-2 items-center rounded-md text-sm font-medium" th:href="@{/receptionist}">
+	Home
+</button>
 	<br>
 	<br>
 	<h3 align = "center">  <div th:if="${message}" th:text="${message}" th:class="${'alert ' + alertClass}"></div> </h3>
-	
-       
-        <table style="width:100%">
-        <caption>Appointments</caption>
-        
+
+
+        <table class="w-full text-sm text-left text-white dark:text-white-400">
+
         <tr>
-            <th>AppointmentID</th>
-            <th>Patient Name</th>
-            <th>Doctor Name</th>
-            <th>Appointment Date</th>
-            <th>confirmation</th>
+            <th scope="col" class="py-3 px-6">AppointmentID</th>
+            <th scope="col" class="py-3 px-6">Patient Name</th>
+            <th scope="col" class="py-3 px-6">Doctor Name</th>
+            <th scope="col" class="py-3 px-6">Appointment Date</th>
+            <th scope="col" class="py-3 px-6">confirmation</th>
         </tr>
-        <tr th:each=" appointment : ${listAppointments}">
-            <td th:text="${appointment.appointment_id}"></td>
-          	<td th:text="${appointment.patientName}"></td>  
-          	<td th:text="${appointment.doctorName}"></td>
-          	<td th:text="${appointment.date}"></td>
+        <tr class="bg-white border-b dark:bg-gray-800/20 dark:border-gray-700/20" th:each=" appointment : ${listAppointments}">
+            <td class="py-4 px-6" th:text="${appointment.appointment_id}"></td>
+          	<td class="py-4 px-6" th:text="${appointment.patientName}"></td>
+          	<td class="py-4 px-6" th:text="${appointment.doctorName}"></td>
+          	<td class="py-4 px-6" th:text="${appointment.date}"></td>
           	<td>
 			<div th:if="${appointment.confirmed != 'confirmed'}">
-			
+
 			<form action=# th:action="@{/confirmm}" >
 			     		<input type ="submit" value="click to confirm">
 			</form>
@@ -52,9 +43,9 @@ border-spacing: 10px;
      		<span th:if="${appointment.confirmed =='confirmed'}"> confirmed
      		</span>
      </td>
-     
+
     </table>
-   
-    
+
+
 </body>
 </html>

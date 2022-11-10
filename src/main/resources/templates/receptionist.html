@@ -1,22 +1,44 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
-    xmlns:th="http://www.thymeleaf.org">
+	  xmlns:th="http://www.thymeleaf.org">
+
 <head>
-<meta charset="ISO-8859-1">
-<title>Receptionist</title>
+	<title>BayMax</title>
+	<script src="https://cdn.tailwindcss.com"></script>
+	<link rel="icon" href="https://freepngimg.com/thumb/animation/59275-hamada-tadashi-company-walt-baymax-the-drawing.png" type="image/icon type">
+
 </head>
-<body style="background-color:powderblue;">
-<hr> <hr>
-	<H1 align="center">BayMax</H1>
-	<hr> 
-Hello! <span th:text="${username}"></span>
-<form action=# th:action="@{/logout}" >
-<input type="submit" value="logout">
-</form>
-<hr>
-<h3 align = "center">  <div th:if="${message}" th:text="${message}" th:class="${'alert ' + alertClass}"></div> </h3>
-<a th:href="@{receptionist/receptionistAppointments}">Appointments</a>
-<a th:href="@{receptionist/receptionistSchedule}">Schedules</a>
-<a th:href="@{receptionist/createInvoice}">Create invoice</a>
+<body background="https://github.com/ItsAkilesh/Baymax/blob/master/src/main/resources/templates/untitled.png?raw=true">
+<section class="bg-white dark:bg-gray-900/0">
+	<div class="py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6">
+		<div class="mx-auto max-w-screen-sm text-center lg:mb-16 mb-8">
+			<h2 class="mb-4 text-3xl lg:text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">BayMax</h2>
+			<h2 class="mb-4 text-2xl lg:text-4xl tracking-tight text-gray-900 dark:text-white">Hello,  <span th:text="${username}"></span></h2>
+			<p class="font-light text-gray-500 sm:text-xl dark:text-gray-400">Receptionist's Portal</p>
+
+		</div>
+		<div class="grid gap-8 lg:grid-cols-2">
+			<article class="p-6 bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800/30 dark:border-gray-700/30">
+				<h2 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white content-center"><a th:href="@{/jsoncalendar}">See Schedule</a></h2>
+			</article>
+			<article class="p-6 bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800/30 dark:border-gray-700/30">
+				<h2 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white content-center"><a th:href="@{receptionist/receptionistAppointments}">See Appointments</a></h2>
+			</article>
+			<article class="p-6 bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800/30 dark:border-gray-700/30">
+				<h2 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white content-center"><a th:href="@{receptionist/createInvoice}">Create Invoice</a></h2>
+			</article>
+		</div>
+	</div>
+
+</section>
+<div class="container py-10 px-10 mx-0 min-w-full flex flex-col items-center">
+	<form action=# th:action="@{/logout}" >
+		<button type="submit" value="logout" class="bg-red-600 text-gray-300 hover:bg-red-800 hover:text-white px-3 py-2 items-center rounded-md text-sm font-medium">
+			Log Out
+		</button>
+	</form>
+</div>
 </body>
 </html>
+
+
